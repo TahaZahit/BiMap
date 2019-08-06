@@ -1,0 +1,8 @@
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\bin\Release\netcoreapp3.0\BiMap.deps.json
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\bin\Release\netcoreapp3.0\BiMap.dll
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\bin\Release\netcoreapp3.0\BiMap.pdb
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\obj\Release\netcoreapp3.0\BiMap.csproj.CoreCompileInputs.cache
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\obj\Release\netcoreapp3.0\BiMap.AssemblyInfoInputs.cache
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\obj\Release\netcoreapp3.0\BiMap.AssemblyInfo.cs
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\obj\Release\netcoreapp3.0\BiMap.dll
+C:\Users\Apabos\Downloads\nuget\BiMap\BiMap\obj\Release\netcoreapp3.0\BiMap.pdb

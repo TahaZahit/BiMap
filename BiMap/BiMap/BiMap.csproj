@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Authors>Taha Zahit Hakyemez</Authors>
+    <Description>Simple Generic Bidirectional Map which has GetKey GetValue and Add functions.</Description>
+    <PackageReleaseNotes>Simplest first version contains GetKey GetValue and Add functions.</PackageReleaseNotes>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+</Project>
