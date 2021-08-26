@@ -1,46 +1,80 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace BiMap
 {
-    public class BiMap<TKey,TValue>
-    {
-        private Dictionary<TKey,TValue> normal;
-        private Dictionary<TValue,TKey> reverse;
+	public class BiMap<TLeft, TRight> : IBiMap<TLeft, TRight>
+	{
+		private Dictionary<TLeft, TRight> LeftToRight;
+		private Dictionary<TRight, TLeft> RightToLeft;
 
-        public BiMap()
-        {
-            normal = new Dictionary<TKey, TValue>();
-            reverse = new Dictionary<TValue, TKey>();
-        }
-        public BiMap(Dictionary<TKey,TValue> dictionary)
-        {
-            normal = new Dictionary<TKey, TValue>(dictionary);
-            reverse = new Dictionary<TValue, TKey>();
+		public int Count
+		{
+			get
+			{
+				return this.LeftToRight.Count;
+			}
+		}
 
-            foreach (var item in normal)
-            {
-                reverse.Add(item.Value, item.Key);
-            }
-        }
+		public BiMap(IEqualityComparer<TLeft> leftComp = null, IEqualityComparer<TRight> rightComp = null)
+		{
+			this.LeftToRight = new Dictionary<TLeft, TRight>(leftComp);
+			this.RightToLeft = new Dictionary<TRight, TLeft>(rightComp);
+		}
 
-        public TValue GetValue(TKey key)
-        {
-            TValue value;
-            normal.TryGetValue(key, out value);
-            return value;
-        }
-        public TKey GetKey(TValue value)
-        {
-            TKey key;
-            reverse.TryGetValue(value, out key);
-            return key;
-        }
-        public void Add(TKey key,TValue value)
-        {
-            normal.Add(key, value);
-            reverse.Add(value, key);
-        }
-    }
+		public bool AddPair(TLeft left, TRight right)
+		{
+			if (LeftToRight.ContainsKey(left) || RightToLeft.ContainsKey(right))
+			{
+				return false;
+			}
+
+			LeftToRight.Add(left, right);
+			RightToLeft.Add(right, left);
+
+			return true;
+		}
+
+		public IEnumerable<KeyValuePair<TLeft, TRight>> EnumerateLeftToRight()
+		{
+			return LeftToRight;
+		}
+
+		public IEnumerable<KeyValuePair<TRight, TLeft>> EnumerateRightToLeft()
+		{
+			return RightToLeft;
+		}
+
+		public TRight GetLeftToRight(TLeft key)
+		{
+			TRight result;
+
+			if (!this.TryGetLeftToRight(key, out result))
+				throw new KeyNotFoundException("Key: " + key.ToString() + " not found in left-to-right collection");
+
+			return result;
+		}
+
+		public bool TryGetLeftToRight(TLeft key, out TRight value)
+		{
+			return this.LeftToRight.TryGetValue(key, out value);
+		}
+
+		public TLeft GetRightToLeft(TRight key)
+		{
+			TLeft result;
+
+			if (!this.TryGetRightToLeft(key, out result))
+				throw new KeyNotFoundException("Key: " + key.ToString() + " not found in right-to-left collection");
+
+			return result;
+		}
+
+		public bool TryGetRightToLeft(TRight key, out TLeft value)
+		{
+			return this.RightToLeft.TryGetValue(key, out value);
+		}
+	}
 }
