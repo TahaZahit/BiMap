@@ -1,3 +1,4 @@
+[![.NET](https://github.com/TahaZahit/BiMap/actions/workflows/dotnet.yml/badge.svg)](https://github.com/TahaZahit/BiMap/actions/workflows/dotnet.yml)
 # BiMap
 Simple Generic Bidirectional Map for c#
 
