@@ -20,6 +20,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
+      working-directory: BiMap/BiMap
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
