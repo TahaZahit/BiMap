@@ -18,9 +18,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
+      working-directory: BiMap/BiMap
       run: dotnet restore
     - name: Build
       working-directory: BiMap/BiMap
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
