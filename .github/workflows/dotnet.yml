@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore BiMap.sln --configuration Release
     - name: Pack
-      run: dotnet pack BiMap.csproj --configuration Release --output nuget-packages
+      run: dotnet pack BiMap/BiMap.csproj --configuration Release --output nuget-packages
     - name: Upload NuGet Package
       uses: actions/upload-artifact@v4
       with:
