@@ -12,6 +12,10 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     
+    permissions:
+      packages: write
+      contents: read
+    
     steps:
     - uses: actions/checkout@v4
 
@@ -36,3 +40,7 @@ jobs:
     - name: Publish to NuGet
       if: github.event_name == 'release'
       run: dotnet nuget push "nuget-packages/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+    - name: Publish to GitHub Packages
+      if: github.event_name == 'release'
+      run: dotnet nuget push "nuget-packages/*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} --source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json" --skip-duplicate
