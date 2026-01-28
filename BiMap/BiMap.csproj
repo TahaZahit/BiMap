@@ -5,9 +5,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Taha Zahit Hakyemez</Authors>
     <Description>Thread-safe, high-performance generic bidirectional map for .NET (BiMap). Supports O(1) lookups in both directions.</Description>
-    <PackageReleaseNotes>Fix deployment workflow: Use build artifacts to ensure packaging consistency.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fix deployment workflow: Upgrade to artifacts v4 actions to resolve deprecation failure.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
     <RepositoryUrl>https://github.com/TahaZahit/BiMap</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/TahaZahit/BiMap</PackageProjectUrl>
