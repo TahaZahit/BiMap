@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Taha Zahit Hakyemez</Authors>
     <Description>Simple Generic Bidirectional Map which has GetKey GetValue and Add functions.</Description>
     <PackageReleaseNotes>Simplest first version contains GetKey GetValue and Add functions.</PackageReleaseNotes>
