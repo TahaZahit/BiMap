@@ -5,9 +5,9 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Taha Zahit Hakyemez</Authors>
     <Description>Thread-safe, high-performance generic bidirectional map for .NET (BiMap). Supports O(1) lookups in both directions.</Description>
-    <PackageReleaseNotes>Added publishing to GitHub Packages registry.</PackageReleaseNotes>
+    <PackageReleaseNotes>Renamed CI/CD workflow for better visibility.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.8</Version>
+    <Version>2.0.9</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/TahaZahit/BiMap</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
