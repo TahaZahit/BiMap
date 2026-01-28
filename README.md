@@ -1,4 +1,7 @@
 [![.NET](https://github.com/TahaZahit/BiMap/actions/workflows/dotnet.yml/badge.svg)](https://github.com/TahaZahit/BiMap/actions/workflows/dotnet.yml)
+[![NuGet](https://img.shields.io/nuget/v/BiMap.svg)](https://www.nuget.org/packages/BiMap)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/BiMap.svg)](https://www.nuget.org/packages/BiMap)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # BiMap
 
