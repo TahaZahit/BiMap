@@ -5,9 +5,10 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <Authors>Taha Zahit Hakyemez</Authors>
     <Description>Thread-safe, high-performance generic bidirectional map for .NET (BiMap). Supports O(1) lookups in both directions.</Description>
-    <PackageReleaseNotes>Fix dotnet pack path in CI/CD workflow.</PackageReleaseNotes>
+    <PackageReleaseNotes>Includes README.md in NuGet package documentation.</PackageReleaseNotes>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.5</Version>
+    <Version>2.0.6</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/TahaZahit/BiMap</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageProjectUrl>https://github.com/TahaZahit/BiMap</PackageProjectUrl>
@@ -16,5 +17,9 @@
     <ApplicationIcon />
     <StartupObject />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
 </Project>
