@@ -21,6 +21,8 @@ jobs:
       run: dotnet restore BiMap.sln
     - name: Build
       run: dotnet build --no-restore BiMap.sln --configuration Release
+    - name: Test
+      run: dotnet test --no-build BiMap.sln --configuration Release
     - name: Pack
       run: dotnet pack BiMap/BiMap.csproj --configuration Release --output nuget-packages
     - name: Upload NuGet Package
