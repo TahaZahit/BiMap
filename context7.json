@@ -1,0 +1,15 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "BiMap",
+  "description": "Thread-safe generic bidirectional map for .NET. O(1) lookups in both directions with a strict 1-to-1 mapping.",
+  "excludeFolders": ["BiMap.Tests"],
+  "rules": [
+    "BiMap<TLeft, TRight> is IDisposable — it holds a ReaderWriterLockSlim. Dispose it, or declare it with using, when the map is not a long-lived singleton.",
+    "There is no indexer. Read with GetLeftToRight(left) / GetRightToLeft(right), or TryGetLeftToRight / TryGetRightToLeft when the key may be absent.",
+    "Removal is direction-specific: RemoveByLeft(left) and RemoveByRight(right). There is no plain Remove.",
+    "Add(left, right) returns false rather than throwing when either side already exists. Both the left and the right value must be unique across the map, so check the return value.",
+    "Containment is direction-specific too: ContainsLeft(left) and ContainsRight(right).",
+    "Enumerate with EnumerateLeftToRight() or EnumerateRightToLeft(); the type is not itself IEnumerable.",
+    "Targets netstandard2.0, so it works on .NET Framework 4.6.1+ as well as modern .NET."
+  ]
+}
